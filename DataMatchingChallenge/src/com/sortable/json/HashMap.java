@@ -8,14 +8,25 @@ import org.json.JSONException;
 import com.sortable.Utils;
 
 
+/*
+ * Custom HashMap Class
+ * 
+ * Similar to the HashMap class however it converts an InputStream in a hash map of JsonObjects
+ * 
+ */
 public class HashMap<K, V> extends LinkedHashMap<K, V> implements GenericDataType{
 	
 	public static final long serialVersionUID = 1L;
 	public String[] comparableKeys;
 	public String uniqueKey;
 
+
 	/*
+	 * Initialize a HashMap class using an InputStream and store the uniqueKey and comparable keys
 	 * 
+	 *  @param is = InputStream with all elements in a JSON Format
+	 *  @param uniqueKey = Used as key param for the hash 
+	 *  @param comparableKeys = Array of String with the keys to set the Comparable Value
 	 */
 	@SuppressWarnings("unchecked")
 	public HashMap( InputStream is, String uniqueKey, String[] comparableKeys ) throws IOException, JSONException
@@ -39,7 +50,7 @@ public class HashMap<K, V> extends LinkedHashMap<K, V> implements GenericDataTyp
 		   	   try {
 		   	 	    for(int i=0; i<comparableKeys.length; i++) value += jsonObject.get(comparableKeys[i]).toString() + " " ;
 		   	   } catch (JSONException e) { }
-	    	   jsonObject.put(JsonObject.COMPARABLE_KEY, Utils.replaceMultipleCharactersToSingleSpace(value) );
+	    	   jsonObject.setComparableValue( Utils.stringToSet(value) );
 	
 	    	   //add json to HashMap
 	    	   this.put( (K)jsonObject.get(uniqueKey), (V)jsonObject);
@@ -52,7 +63,7 @@ public class HashMap<K, V> extends LinkedHashMap<K, V> implements GenericDataTyp
 	}
 	
 	/*
-	 * 
+	 * Clear the value of each pair: key, value
 	 */
 	public void clearValues()
 	{
@@ -62,6 +73,9 @@ public class HashMap<K, V> extends LinkedHashMap<K, V> implements GenericDataTyp
 		}
 	}
 
+	/*
+	 * Unique key used as hash id
+	 */
 	public String getUniqueKey()
 	{
 		return uniqueKey;
