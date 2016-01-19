@@ -52,6 +52,8 @@ strings. In summary, it is a token based vector used for comparing similarity an
  * https://en.wikipedia.org/wiki/Jaccard_index
  * http://en.wikipedia.org/wiki/MinHash
 
+## Conclusion
+
 Finally, after changing some codes, I could get better results and reduced the running time in 75% comparing with the first version. 
 
 
