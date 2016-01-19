@@ -27,5 +27,5 @@ So I found Jaccard Similarity coefficient it is a token based vector space simil
 
 Jaccard similarity can then be used as the simplest method for computing likeness as the proportion of tokens shared by both
 strings.
-
-So it was possible to reduce the running time by 65% and 
+ 
+So it was possible to reduce the running time overall 25% from the first aprroach
