@@ -2,15 +2,15 @@
 
 ## Challenge
 
-The challenge was to determine when two pieces of information from different data sources are actually talking about the same.
+The challenge is to determine when two pieces of information from different data sources are actually talking about the same.
 
-For example, You have to compare two similiar products "Sony_Cyber-shot_DSC-W310" and "Sony DSC-W310 12.1MP Digital Camera ...", and using text similiraty algorithms match the both. 
+For example,you have to compare two similiar products "Sony_Cyber-shot_DSC-W310" and "Sony DSC-W310 12.1MP Digital Camera ...", and using text similiraty algorithms match them. 
 
 However there are some requirements:
 
-Precision – do you make (m)any false matches?
-Recall – how many correct matches did you make?
-Efficiency (data structure and algorithm choices)
+- Precision – do you make (m)any false matches?
+- Recall – how many correct matches did you make?
+- Efficiency (data structure and algorithm choices)
 
 
 ## First approach
