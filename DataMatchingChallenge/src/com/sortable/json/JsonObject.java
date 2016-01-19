@@ -5,13 +5,11 @@ import java.util.Set;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.sortable.Utils;
-
 /*
  * Custom JSONObject class
  * 
  * Similar to the JSONObject class however it stores and gets
- * a comparable string which will be used to match the elements
+ * a comparable set/string which will be used to match the elements
  */
 public class JsonObject extends JSONObject {
 	

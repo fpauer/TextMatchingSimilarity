@@ -1,19 +1,7 @@
 package com.sortable;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.sortable.json.HashMap;
-import com.sortable.json.List;
 
 /**
  * Jaccard similarity coefficient 

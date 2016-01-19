@@ -2,7 +2,6 @@ package com.sortable;
 
 import java.io.*;
 import java.util.Map;
-import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,12 +33,15 @@ public class DataMatchingChallenge {
 		challenge.run();
 	}
 
+	@SuppressWarnings("unchecked")
 	public void run()
 	{
 		long startTime = System.currentTimeMillis();
 		long runningTime = 0;
 		int matched = 0;
-		
+
+	    System.out.println("----- Text Similarity Matching using Jaccard coefficient -------------------------");
+	    
 		//reading files
 		InputStream inputTarget = JaccardSimilarity.class.getResourceAsStream("/textfiles/products.txt");
 		InputStream inputSource = JaccardSimilarity.class.getResourceAsStream("/textfiles/listings.txt");
@@ -73,6 +75,7 @@ public class DataMatchingChallenge {
 			// for each source item find at most one target item
 			for(JsonObject sourceItem: sourceList)
 			{
+				//just to show the running time
 				i++;
 				if(i%2000 == 0)
 				{

@@ -95,6 +95,7 @@ public class EditDistance {
 	}
 	
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args)
 	{
 		long startTime = System.currentTimeMillis();
