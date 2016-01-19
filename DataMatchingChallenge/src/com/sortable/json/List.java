@@ -6,7 +6,12 @@ import org.json.JSONException;
 
 import com.sortable.Utils;
 
-
+/*
+ * Custom List Class
+ * 
+ * Similar to the List class however it converts an InputStream in a collection of JsonObjects
+ * 
+ */
 public class List<T> extends ArrayList<T> implements GenericDataType{
 
 	private static final long serialVersionUID = 2L;
@@ -14,7 +19,10 @@ public class List<T> extends ArrayList<T> implements GenericDataType{
 	public String[] comparableKeys;
 	
 	/*
+	 * Initialize a List class using an InputStream and store the comparable keys
 	 * 
+	 *  @param is = InputStream with all elements in a JSON Format
+	 *  @param comparableKeys = Array of String with the keys to set the Comparable Value
 	 */
 	@SuppressWarnings("unchecked")
 	public List( InputStream is, String[] comparableKeys ) throws IOException, JSONException
