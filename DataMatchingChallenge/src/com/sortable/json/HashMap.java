@@ -50,7 +50,7 @@ public class HashMap<K, V> extends LinkedHashMap<K, V> implements GenericDataTyp
 		   	   try {
 		   	 	    for(int i=0; i<comparableKeys.length; i++) value += jsonObject.get(comparableKeys[i]).toString() + " " ;
 		   	   } catch (JSONException e) { }
-	    	   jsonObject.put(JsonObject.COMPARABLE_KEY, Utils.replaceMultipleCharactersToSingleSpace(value) );
+	    	   jsonObject.setComparableValue( Utils.stringToSet(value) );
 	
 	    	   //add json to HashMap
 	    	   this.put( (K)jsonObject.get(uniqueKey), (V)jsonObject);
@@ -73,6 +73,9 @@ public class HashMap<K, V> extends LinkedHashMap<K, V> implements GenericDataTyp
 		}
 	}
 
+	/*
+	 * Unique key used as hash id
+	 */
 	public String getUniqueKey()
 	{
 		return uniqueKey;

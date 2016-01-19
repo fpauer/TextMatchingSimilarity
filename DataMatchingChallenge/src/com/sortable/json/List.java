@@ -43,7 +43,7 @@ public class List<T> extends ArrayList<T> implements GenericDataType{
 		   	   try {
 		   	 	    for(int i=0; i<comparableKeys.length; i++) value += jsonObject.get(comparableKeys[i]).toString() + " " ;
 		   	   } catch (JSONException e) { }
-	    	   jsonObject.put(JsonObject.COMPARABLE_KEY, Utils.replaceMultipleCharactersToSingleSpace(value) );
+	    	   jsonObject.setComparableValue( Utils.stringToSet(value) );
 	
 	    	   //add json to List
 	    	   this.add( (T) jsonObject );

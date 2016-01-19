@@ -147,7 +147,7 @@ public class EditDistance {
 				bestMatch = "";
 				
 				//preparing the source item
-				comparableStringSource = sourceItem.getComparableValue();
+				comparableStringSource = sourceItem.getComparableValueAsString();
 				
 				//reducing the string size up to 50+20% characters to avoid incorrect matches
 				if(comparableStringSource.length()>(limitDistance*tolerance)) comparableStringSource = comparableStringSource.substring(0, (int)(limitDistance*tolerance) );
@@ -156,7 +156,7 @@ public class EditDistance {
 				for(Map.Entry<String, JsonObject> targetItem: targetList.entrySet() )
 				{
 					//preparing the target item
-					comparableStringTarget = targetItem.getValue().getComparableValue();
+					comparableStringTarget = targetItem.getValue().getComparableValueAsString();
 					
 					//reducing the string size up to 50+20% characters to avoid incorrect matches
 					if(comparableStringTarget.length()>(limitDistance*tolerance)) comparableStringTarget = comparableStringTarget.substring(0, (int)(limitDistance*tolerance) );
